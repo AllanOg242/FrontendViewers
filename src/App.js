@@ -12,7 +12,6 @@ import { Article } from './routes/article.js'
 import { Category } from './routes/category.js'
 
 import { About } from './routes/about.js'
-import { Contact } from './routes/contact.js'
 import { Home } from './routes/home.js'
 import { getActiveItemId, getPageName } from './utils/path.js'
 
@@ -24,8 +23,6 @@ const App = () => {
       let Page = Home
       if (pageName === 'about') {
           Page = About
-      } else if (pageName === 'contact') {
-          Page = Contact
       } else if (pageName === 'categories') {
           Page = Category
       } else if (pageName === 'articles') {
