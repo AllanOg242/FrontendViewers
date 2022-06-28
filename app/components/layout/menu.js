@@ -156,17 +156,6 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                         About
                     </a>
                 </li>
-                <li class="item">
-                    <i class="fas fa-paper-plane icon" />
-                    <a
-                        href="${prefixUriIfNeeded('/contact')}"
-                        title="Contact"
-                        class="item-link"
-                        onClick=${avoidReload}
-                    >
-                        Contact
-                    </a>
-                </li>
             </ul>
             <hr class="separator" />
             <ul class="menu-list">
