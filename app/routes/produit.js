@@ -2,6 +2,7 @@ import { html } from '../lib/htm-preact.js'
 import { Page } from '../components/layout/page.js'
 import prefixUriIfNeeded from '../utils/prefixUriIfNeeded.js'
 import { avoidReload } from '../utils/avoidReload.js'
+import capitalize from '../../utils/capitalize.js'
 
 export const Produit = () => html`
     <style>
@@ -58,43 +59,53 @@ export const Produit = () => html`
             border-bottom: none;
         }
     </style>
-    <${Page}
-        title="About"
-        subtitle="React Drive CMS Demo"
-        description="An easy way to publish articles directly from Google Drive"
-        sidebarImage=${prefixUriIfNeeded('/assets/default-about.jpg')}
-        showLinks=${true}
-    >
-    
-    <h1>Image</h1>
-        <div class="about-content">
+        <div class="">
             <img
-                src=${prefixUriIfNeeded('/assets/react_logo.png')}
+                src=${prefixUriIfNeeded('/assets/merco.jpg')}
                 class="image"
             />
-            <div class="info">
-                <h1 class="info-title">React Drive CMS Demo</h1>
-                <p>
+            <h1 class="info-title">Mercedes Classe A </h1>
+            <p>
                     A demo site to showcase the use of Google Drive as a Content
                     Management System. Write articles in Google Docs and publish
                     them directly from there.
-                </p>
-                <p>
+            </p>
+            <p>
                     Google Drive is the backend, only a few static files are
                     hosted on GitHub Pages, and the content is displayed with
                     React JS.
-                </p>
-            </div>
+            </p>
+            <form>
+                <div>
+                    <span> Commentaire </span>
+                    <input type="text" name="nameC" placeholder="Join the discussion" />
+                </div>
+                <div>
+                    <span> Name </span>
+                    <input type="text" name="nameN" placeholder="Your name" />
+                </div>
+                <input type="submit" value="Envoyer" />
+            </form>
         </div>
-
-        <footer>
-            <a
-                href="${prefixUriIfNeeded('/contact')}"
-                class="contact"
-                onClick=${avoidReload}
-            >
-                Contact
-            </a>
-        </footer>
+        <${Page}
+            title="About"
+            subtitle="React Drive CMS Demo"
+            description="An easy way to publish articles directly from Google Drive"
+            showLinks=${true}
+        >
+    
     <//>
+    
 `
+export const BaseInput = ({
+    type = 'text',
+    name = 'nameC',
+    name = 'nameN',
+
+}) => {
+return html`<
+    type=${type}
+    nameC=${name}
+    nameN=${name}
+/>`
+}
