@@ -10,6 +10,7 @@ import { reducer, initialState } from './state.js'
 
 import { Article } from './routes/article.js'
 import { Category } from './routes/category.js'
+import { Produit } from './routes/produit.js'
 
 import { Connexion } from './routes/connexion.js'
 import { About } from './routes/about.js'
@@ -30,6 +31,8 @@ const App = () => {
             Page = Category
         } else if (pageName === 'articles') {
             Page = Article
+        } else if (pageName === 'produit') {
+            Page = Produit
         }
         return Page
     }, [pageName])

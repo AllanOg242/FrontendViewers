@@ -171,7 +171,17 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                     </a>
                 </li>
 
-
+                <li class="item">
+                    <i class="fas fa-user icon" />
+                    <a
+                        href="${prefixUriIfNeeded('/produit')}"
+                        title="Produit"
+                        class="item-link"
+                        onClick=${avoidReload}
+                    >
+                        Produit
+                    </a>
+                </li>
                 
                 
             </ul>
@@ -221,6 +231,8 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                                             </li>
                                         `
                                     )}
+
+
                             </ul>
                         </li>
                     `
