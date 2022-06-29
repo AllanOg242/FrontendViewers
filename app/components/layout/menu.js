@@ -132,6 +132,7 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                 color: #fff;
             }
         </style>
+
         <nav id="menu" class="menu ${menuVisible ? 'menu-open' : ''}">
             <ul class="menu-list">
                 <li class="item">
@@ -145,6 +146,7 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                         Home
                     </a>
                 </li>
+
                 <li class="item">
                     <i class="fas fa-user icon" />
                     <a
@@ -156,8 +158,26 @@ export const Menu = ({ categories, articles, menuVisible }) => {
                         About
                     </a>
                 </li>
+
+                <li class="item">
+                    <i class="fas fa-user icon" />
+                    <a
+                        href="${prefixUriIfNeeded('/about')}"
+                        title="Connexion"
+                        class="item-link"
+                        onClick=${avoidReload}
+                    >
+                        Connexion
+                    </a>
+                </li>
+
+
+                
+                
             </ul>
+            
             <hr class="separator" />
+
             <ul class="menu-list">
                 ${Object.values(categories).map(
                     (category, index) => html`

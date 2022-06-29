@@ -11,6 +11,7 @@ import { reducer, initialState } from './state.js'
 import { Article } from './routes/article.js'
 import { Category } from './routes/category.js'
 
+import { Connexion } from './routes/connexion.js'
 import { About } from './routes/about.js'
 import { Home } from './routes/home.js'
 import { getActiveItemId, getPageName } from './utils/path.js'
@@ -23,6 +24,8 @@ const App = () => {
         let Page = Home
         if (pageName === 'about') {
             Page = About
+        } else if (pageName === 'connexion') {
+            Page = Connexion
         } else if (pageName === 'categories') {
             Page = Category
         } else if (pageName === 'articles') {
