@@ -17,7 +17,7 @@ export const Api = {
             headers,
         })
 
-        return fetch(url, options)
+        return fetch("http://178.33.234.128:8022/api/articles/", options)
     },
 
     async get(
@@ -27,7 +27,7 @@ export const Api = {
             credentials: 'include',
         }
     ) {
-        return this.call(url, { ...options, method: 'GET' })
+        return this.call("http://178.33.234.128:8022/api/articles/", { ...options, method: 'GET' })
     },
 
     async post(
@@ -37,6 +37,6 @@ export const Api = {
             credentials: 'include',
         }
     ) {
-        return this.call(url, { ...options, method: 'POST' })
+        return this.call("http://178.33.234.128:8022/api/articles/", { ...options, method: 'POST' })
     },
 }
