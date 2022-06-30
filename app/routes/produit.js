@@ -80,6 +80,16 @@ export const Produit = () => html`
                     hosted on GitHub Pages, and the content is displayed with
                     React JS.
             </p>
+            <p>
+                    A demo site to showcase the use of Google Drive as a Content
+                    Management System. Write articles in Google Docs and publish
+                    them directly from there.
+            </p>
+            <p>
+                    Google Drive is the backend, only a few static files are
+                    hosted on GitHub Pages, and the content is displayed with
+                    React JS.
+            </p>
             <form onSubmit=${handleSubmit}>
                 <div>
                     <span> Commentaire </span>
