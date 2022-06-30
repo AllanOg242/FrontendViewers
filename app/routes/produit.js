@@ -1,9 +1,6 @@
 import { html } from '../lib/htm-preact.js'
 import { Page } from '../components/layout/page.js'
 import prefixUriIfNeeded from '../utils/prefixUriIfNeeded.js'
-import { avoidReload } from '../utils/avoidReload.js'
-import capitalize from '../../utils/capitalize.js'
-
 export const Produit = () => html`
     <style>
         .about-content {
@@ -75,16 +72,17 @@ export const Produit = () => html`
                     hosted on GitHub Pages, and the content is displayed with
                     React JS.
             </p>
-            <form>
+            <form action="" method="post">
                 <div>
                     <span> Commentaire </span>
-                    <input type="text" name="nameC" placeholder="Join the discussion" />
+                    <input type="text" name="commentaire" placeholder="Join the discussion" />
                 </div>
                 <div>
                     <span> Name </span>
-                    <input type="text" name="nameN" placeholder="Your name" />
+                    <input type="text" name="name" placeholder="Your name" />
                 </div>
                 <input type="submit" value="Envoyer" />
+                <button onClick={avoidReload}> Submit </button>
             </form>
         </div>
         <${Page}
@@ -97,15 +95,3 @@ export const Produit = () => html`
     <//>
     
 `
-export const BaseInput = ({
-    type = 'text',
-    name = 'nameC',
-    name = 'nameN',
-
-}) => {
-return html`<
-    type=${type}
-    nameC=${name}
-    nameN=${name}
-/>`
-}
