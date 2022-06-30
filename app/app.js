@@ -18,6 +18,13 @@ import { Home } from './routes/home.js'
 import { getActiveItemId, getPageName } from './utils/path.js'
 
 const App = () => {
+
+    const getArticles = () => {
+        fetch('http://178.33.234.128:8022/api/articles/').then(function(response) {
+            console.log(response);
+        })
+    }
+
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const pageName = state?.pageName
