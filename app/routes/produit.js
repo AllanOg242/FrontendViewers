@@ -3,6 +3,7 @@ import { Page } from '../components/layout/page.js'
 import prefixUriIfNeeded from '../utils/prefixUriIfNeeded.js'
 
 const handleSubmit=(e)=>{
+    e.preventDefault();
     const comment = e.target.commentaire.value;
     const name = e.target.nameN.value;
     console.log("Commentaire : " +comment, "\n", "Nom : " +name);
@@ -79,7 +80,7 @@ export const Produit = () => html`
                     hosted on GitHub Pages, and the content is displayed with
                     React JS.
             </p>
-            <form>
+            <form onSubmit=${handleSubmit}>
                 <div>
                     <span> Commentaire </span>
                     <input type="text" name="commentaire" placeholder="Join the discussion" className="form-control"/>
