@@ -1,6 +1,13 @@
 import { html } from '../lib/htm-preact.js'
 import { Page } from '../components/layout/page.js'
 import prefixUriIfNeeded from '../utils/prefixUriIfNeeded.js'
+
+const handleSubmit=(e)=>{
+    const comment = e.target.commentaire.value;
+    const name = e.target.nameN.value;
+    console.log("Commentaire : " +comment, "\n", "Nom : " +name);
+}
+
 export const Produit = () => html`
     <style>
         .about-content {
@@ -56,7 +63,7 @@ export const Produit = () => html`
             border-bottom: none;
         }
     </style>
-        <div class="">
+        <div className="container">
             <img
                 src=${prefixUriIfNeeded('/assets/merco.jpg')}
                 class="image"
@@ -72,17 +79,16 @@ export const Produit = () => html`
                     hosted on GitHub Pages, and the content is displayed with
                     React JS.
             </p>
-            <form action="" method="post">
+            <form>
                 <div>
                     <span> Commentaire </span>
-                    <input type="text" name="commentaire" placeholder="Join the discussion" />
+                    <input type="text" name="commentaire" placeholder="Join the discussion" className="form-control"/>
                 </div>
                 <div>
                     <span> Name </span>
-                    <input type="text" name="name" placeholder="Your name" />
+                    <input type="text" name="nameN" placeholder="Your name" className="form-control"/>
                 </div>
-                <input type="submit" value="Envoyer" />
-                <button onClick={avoidReload}> Submit </button>
+                <button onClick=""> Envoyer </button>
             </form>
         </div>
         <${Page}
@@ -91,7 +97,6 @@ export const Produit = () => html`
             description="An easy way to publish articles directly from Google Drive"
             showLinks=${true}
         >
-    
     <//>
     
 `
